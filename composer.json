@@ -1,0 +1,33 @@
+{
+  "name": "miniplay/imageOptim",
+  "description": "PHP 5.3+ wrapper to perform image optimizations supporting any third-party command line tool.",
+  "keywords": ["image","optimization"],
+  "type": "library",
+  "license": "APACHE 2",
+  "authors": [
+    {
+      "name": "Miniplay",
+      "homepage": "http://github.com/miniplay"
+    },
+    {
+      "name": "Rubén Moraleda",
+      "homepage": "http://github.com/rmruano"
+    }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ImageOptim\\": "lib/ImageOptim/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
