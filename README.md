@@ -24,14 +24,14 @@ Roadmap
 How to use
 ----------
 
-1. Install some image optimizers on your system:
+1- Install some image optimizers on your system:
 ```
 $ yum install jpegoptim
 $ yum install optipng
 ...
 ```
 
-2. Add dependency to your composer.json and run composer update
+2- Add dependency to your composer.json and run composer update
 ```
 {
     "repositories": [
@@ -46,7 +46,7 @@ $ yum install optipng
 }
 ```
 
-3. Include the following code in your PHP App:
+3- Include the following code in your PHP App:
 ```
 $imageOptim = new ImageOptim\ImageOptim();
 
