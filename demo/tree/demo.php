@@ -57,16 +57,3 @@ Header("Content-type: text/plain");
     }
 
 echo PHP_EOL."DONE".PHP_EOL;
-
-
-
-//print_r($imageOptim->optimizeImage("index.php"));
-//print_r($imageOptim->optimizeImage("images/sample.jpg"));
-//$optimizationResult=$imageOptim->optimizeImage("mountains.jpg");
-//echo $optimizationResult->imageFile.": " . ($optimizationResult->success ? "Success":"Error") . " (". $optimizationResult->percentOptimized."% optimized)".PHP_EOL;
-
-/*print_r($imageOptim->optimizeDirRecursive("./assets/media/contests", function(\Mini\Util\ImageOptim\Result $currentResult, $processedFiles, $totalFiles) {
-    echo $currentResult->filePath . " processed " . ($currentResult->success ? "OK":"KO") . " - ".$processedFiles . "/" . $totalFiles . ($currentResult->ignored ? " (IGNORED)":"") .PHP_EOL;
-}));*/
-
-//print_r($imageOptim->optimizeImage("inasdasddex.php"));
