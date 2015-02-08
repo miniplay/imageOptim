@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Simple demostration on how to optimize a few images.
+ * ----------------------------------------------------
+ * Optimizations overwrites the images, to prevent that so the demo can be run multiple times, they're copied to new
+ * files before being processed.
+ * It requires jpegoptim & optipng to be installed on your system, otherwise the commands will fail.
+ */
+
 ini_set("display_errors",true);
 error_reporting(E_ALL);
 
@@ -12,12 +20,12 @@ Header("Content-type: text/plain");
 
 // 2.a. Register JPEG optimizer command (jpegoptim must be installed in your system: yum install jpegoptim)
     $jpegOptimizer = new ImageOptim\Optimizer("jpegoptim", array(IMAGETYPE_JPEG));
-    $jpegOptimizer->addPrevArgument("--strip-all");
+    $jpegOptimizer->addPrevArgument("--strip-all"); // Prepend argument (before the filename)
     $imageOptim->registerOptimizer($jpegOptimizer);
 
 // 2.b. Register PNG optimizer command (optipng must be installed in your system: yum install optipng)
     $pngOptimizer = new ImageOptim\Optimizer("optipng", array(IMAGETYPE_PNG));
-    $pngOptimizer->addPrevArgument("-o3");
+    $pngOptimizer->addPrevArgument("-o3"); // Prepend argument (before the filename)
     $imageOptim->registerOptimizer($pngOptimizer);
 
 // 2.c. No GIF optimizer registered to test the "No optimizers registered for gif images" exception

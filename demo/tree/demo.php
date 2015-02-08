@@ -2,8 +2,10 @@
 
 /**
  * Simple demostration on how to recursively optimize a directory.
+ * --------------------------------------------------------------
  * To make it shorter, no validation checks on source an destination dirs are performed.
  * copyDir() is defined in tools/copyDir.php to recursively copy directories (not required to use the library)
+ * It requires jpegoptim & optipng to be installed on your system, otherwise the commands will fail.
  */
 
 ini_set("display_errors",true);
@@ -19,12 +21,12 @@ Header("Content-type: text/plain");
 
 // 2.a. Register JPEG optimizer command (jpegoptim must be installed in your system: yum install jpegoptim)
     $jpegOptimizer = new ImageOptim\Optimizer("jpegoptim", array(IMAGETYPE_JPEG));
-    $jpegOptimizer->addPrevArgument("--strip-all");
+    $jpegOptimizer->addPrevArgument("--strip-all"); // Prepend argument (before the filename)
     $imageOptim->registerOptimizer($jpegOptimizer);
 
 // 2.b. Register PNG optimizer command (optipng must be installed in your system: yum install optipng)
     $pngOptimizer = new ImageOptim\Optimizer("optipng", array(IMAGETYPE_PNG));
-    $pngOptimizer->addPrevArgument("-o3");
+    $pngOptimizer->addPrevArgument("-o3"); // Prepend argument (before the filename)
     $imageOptim->registerOptimizer($pngOptimizer);
 
 // 2.c. No GIF optimizer registered to test the "No optimizers registered for gif images" exception
