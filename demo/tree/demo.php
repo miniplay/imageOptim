@@ -17,15 +17,15 @@ require("../../vendor/autoload.php");
 Header("Content-type: text/plain");
 
 // 1. Instantiate ImageOptim
-    $imageOptim = new ImageOptim\ImageOptim();
+    $imageOptim = new \ImageOptim\ImageOptim();
 
 // 2.a. Register JPEG optimizer command (jpegoptim must be installed in your system: yum install jpegoptim)
-    $jpegOptimizer = new ImageOptim\Optimizer("jpegoptim", array(IMAGETYPE_JPEG));
+    $jpegOptimizer = new \ImageOptim\Optimizer("jpegoptim", array(IMAGETYPE_JPEG));
     $jpegOptimizer->addPrevArgument("--strip-all"); // Prepend argument (before the filename)
     $imageOptim->registerOptimizer($jpegOptimizer);
 
 // 2.b. Register PNG optimizer command (optipng must be installed in your system: yum install optipng)
-    $pngOptimizer = new ImageOptim\Optimizer("optipng", array(IMAGETYPE_PNG));
+    $pngOptimizer = new \ImageOptim\Optimizer("optipng", array(IMAGETYPE_PNG));
     $pngOptimizer->addPrevArgument("-o3"); // Prepend argument (before the filename)
     $imageOptim->registerOptimizer($pngOptimizer);
 
