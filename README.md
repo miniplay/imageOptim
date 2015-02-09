@@ -48,15 +48,15 @@ $ yum install optipng
 
 3- Include the following code in your PHP App:
 ```
-$imageOptim = new ImageOptim\ImageOptim();
+$imageOptim = new \ImageOptim\ImageOptim();
 
 // Register JPEG optimizer command
-    $jpegOptimizer = new ImageOptim\Optimizer("jpegoptim", array(IMAGETYPE_JPEG));
+    $jpegOptimizer = new \ImageOptim\Optimizer("jpegoptim", array(IMAGETYPE_JPEG));
     $jpegOptimizer->addPrevArgument("--strip-all");
     $imageOptim->registerOptimizer($jpegOptimizer);
 
 // Register PNG optimizer command
-    $pngOptimizer = new ImageOptim\Optimizer("optipng", array(IMAGETYPE_PNG));
+    $pngOptimizer = new \ImageOptim\Optimizer("optipng", array(IMAGETYPE_PNG));
     $pngOptimizer->addPrevArgument("-o3");
     $imageOptim->registerOptimizer($pngOptimizer);
     
