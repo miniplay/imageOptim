@@ -82,7 +82,7 @@ class Optimizer {
                 $result->fileInfo->getBasename($result->fileInfo->getExtension()),
                 dirname($result->filePath)
             ),$arguments);
-            $optimResult->optimizerCommand = $this->command . " " . $arguments;
+            $optimResult->optimizerCommand = $this->command . " " . $arguments . " 2>&1";
             $optimResult->optimizerOutput = shell_exec($optimResult->optimizerCommand);
             if ($optimResult->optimizerOutput===null) {
                 throw new ExceptionExec("Optimization command returned null: ".$optimResult->optimizerCommand);
